@@ -3,6 +3,7 @@
   margin-bottom: 1.5rem;
 }
 .login-wrapper::before {
+  height: 100vh;
   content: "";
   width: 100%;
   background-size: cover;
