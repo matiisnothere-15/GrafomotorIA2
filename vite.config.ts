@@ -10,6 +10,6 @@ export default defineConfig({
   preview: {
     host: '0.0.0.0',
     port,
-    allowedHosts: ['grafomotoria.onrender.com'],
+    allowedHosts: ['grafomotoria2.onrender.com'],
   },
 })
