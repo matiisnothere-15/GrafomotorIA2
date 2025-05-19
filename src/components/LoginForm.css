@@ -4,6 +4,8 @@
 }
 .login-wrapper::before {
   content: "";
+  width: 100%;
+  background-size: cover;
   position: absolute;
   top: 0;
   right: 0;
