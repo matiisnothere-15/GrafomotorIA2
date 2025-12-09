@@ -35,12 +35,33 @@ const CoordinacionMotriz: React.FC = () => {
     ejercicioId,
     ejercicioActual,
     modelo,
+    ejerciciosDelNivel,
     siguienteEjercicio,
     anteriorEjercicio,
     cambiarEjercicio,
     irASiguienteEjercicio,
     navigate,
   } = useCoordinacionEjercicio();
+
+  // Bloqueo de volver a ejercicios anteriores una vez se avanza
+  const storageKey = useMemo(() => `coord-bloqueo-nivel-${nivelNumero}`, [nivelNumero]);
+  const [minIndexPermitido, setMinIndexPermitido] = useState<number>(() => {
+    const stored = sessionStorage.getItem(storageKey);
+    const parsed = stored ? Number(stored) : 0;
+    return Number.isNaN(parsed) ? 0 : parsed;
+  });
+  const actualIndex = useMemo(
+    () => (ejercicioActual ? ejerciciosDelNivel.indexOf(ejercicioActual) : -1),
+    [ejercicioActual, ejerciciosDelNivel]
+  );
+
+  useEffect(() => {
+    // Si el usuario accede directo a un ejercicio más avanzado, elevamos el mínimo permitido
+    if (actualIndex >= 0 && actualIndex > minIndexPermitido) {
+      setMinIndexPermitido(actualIndex);
+      sessionStorage.setItem(storageKey, String(actualIndex));
+    }
+  }, [actualIndex, minIndexPermitido, storageKey]);
 
   // --- Estado de la UI ---
   const [coords, setCoords] = useState<{ x: number; y: number }[]>([]);
@@ -163,7 +184,14 @@ const guardarCoordenadas = useCallback(async () => {
    */
   const manejarSiguienteEjercicio = async () => {
     await guardarCoordenadas();
-    
+
+    // Al avanzar, bloqueamos volver a ejercicios previos
+    if (actualIndex >= 0) {
+      const nuevoMin = Math.max(minIndexPermitido, actualIndex + 1);
+      setMinIndexPermitido(nuevoMin);
+      sessionStorage.setItem(storageKey, String(nuevoMin));
+    }
+
     irASiguienteEjercicio(() => {
       // Esta es la función 'onFinalizar'
       setMostrarResumenIA(true);
@@ -218,7 +246,7 @@ const guardarCoordenadas = useCallback(async () => {
 
       {/* Menú de selección de ejercicios (Estilo VMI: anterior/actual/siguiente) */}
       <div className="selector-nivel">
-        {anteriorEjercicio && (
+        {anteriorEjercicio && actualIndex > minIndexPermitido && (
           <button onClick={() => cambiarTipoLinea(anteriorEjercicio.id)}>
             ← {anteriorEjercicio.nombre}
           </button>

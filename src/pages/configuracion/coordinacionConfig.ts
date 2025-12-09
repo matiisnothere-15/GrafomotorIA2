@@ -18,26 +18,26 @@ export interface EjercicioCoordinacion {
  */
 export const EJERCICIOS_NIVEL: Record<number, EjercicioCoordinacion[]> = {
   1: [
-    { id: 'lineas_horizontales', nombre: 'Líneas Horizontales', dbId: 1, siguienteTexto: 'Ir a Verticales' },
-    { id: 'lineas_verticales', nombre: 'Líneas Verticales', dbId: 2, siguienteTexto: 'Ir a Diagonales' },
-    { id: 'lineas_diagonales', nombre: 'Líneas Diagonales', dbId: 3, siguienteTexto: 'Ir a Círculo' },
-    { id: 'circulo', nombre: 'Círculo', dbId: 4, siguienteTexto: 'Ir a Cuadrado' },
-    { id: 'cuadrado', nombre: 'Cuadrado', dbId: 5, siguienteTexto: 'Ir a X' },
-    { id: 'linea_x', nombre: 'Línea X', dbId: 6, siguienteTexto: 'Ir a Triángulo' },
-    { id: 'triangulo', nombre: 'Triángulo', dbId: 7, siguienteTexto: 'Ir a Cruz' },
-    { id: 'cruz', nombre: 'Cruz', dbId: 8, siguienteTexto: 'Finalizar' },
+    { id: 'lineas_horizontales', nombre: 'Líneas Horizontales', dbId: 1, siguienteTexto: 'Siguiente' },
+    { id: 'lineas_verticales', nombre: 'Líneas Verticales', dbId: 2, siguienteTexto: 'Siguiente' },
+    { id: 'lineas_diagonales', nombre: 'Líneas Diagonales', dbId: 3, siguienteTexto: 'Siguiente' },
+    { id: 'circulo', nombre: 'Círculo', dbId: 4, siguienteTexto: 'Siguiente' },
+    { id: 'cuadrado', nombre: 'Cuadrado', dbId: 5, siguienteTexto: 'Siguiente' },
+    { id: 'linea_x', nombre: 'Línea X', dbId: 6, siguienteTexto: 'Siguiente' },
+    { id: 'triangulo', nombre: 'Triángulo', dbId: 7, siguienteTexto: 'Siguiente' },
+    { id: 'cruz', nombre: 'Cruz', dbId: 8, siguienteTexto: 'Siguiente' },
   ],
   2: [
     // Asumiendo que el Nivel 2 tiene sus propios IDs de BD
-    { id: 'lineas_verticales', nombre: 'Líneas Verticales', dbId: 5, siguienteTexto: 'Ir a Diagonales' },
-    { id: 'lineas_diagonales', nombre: 'Líneas Diagonales', dbId: 6, siguienteTexto: 'Ir a Círculo' },
-    { id: 'circulo', nombre: 'Círculo', dbId: 7, siguienteTexto: 'Finalizar' },
+    { id: 'lineas_verticales', nombre: 'Líneas Verticales', dbId: 5, siguienteTexto: 'Siguiente' },
+    { id: 'lineas_diagonales', nombre: 'Líneas Diagonales', dbId: 6, siguienteTexto: 'Siguiente' },
+    { id: 'circulo', nombre: 'Círculo', dbId: 7, siguienteTexto: 'Siguiente' },
   ],
   3: [
     // ...y así sucesivamente
-    { id: 'lineas_horizontales', nombre: 'Líneas Horizontales', dbId: 8, siguienteTexto: 'Ir a Verticales' },
-    { id: 'lineas_verticales', nombre: 'Líneas Verticales', dbId: 9, siguienteTexto: 'Ir a Diagonales' },
-    { id: 'lineas_diagonales', nombre: 'Líneas Diagonales', dbId: 10, siguienteTexto: 'Ir a Círculo' },
-    { id: 'circulo', nombre: 'Círculo', dbId: 11, siguienteTexto: 'Finalizar' },
+    { id: 'lineas_horizontales', nombre: 'Líneas Horizontales', dbId: 8, siguienteTexto: 'Siguiente' },
+    { id: 'lineas_verticales', nombre: 'Líneas Verticales', dbId: 9, siguienteTexto: 'Siguiente' },
+    { id: 'lineas_diagonales', nombre: 'Líneas Diagonales', dbId: 10, siguienteTexto: 'Siguiente' },
+    { id: 'circulo', nombre: 'Círculo', dbId: 11, siguienteTexto: 'Siguiente' },
   ],
 };

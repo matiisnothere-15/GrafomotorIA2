@@ -2,15 +2,8 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import { VitePWA } from 'vite-plugin-pwa';
 
-const isGitHubPages = process.env.GITHUB_PAGES === 'true';
-const base = isGitHubPages ? '/GrafomotorIA2/' : '/';
-
 export default defineConfig({
-  base: base,
-  preview: {
-    allowedHosts: ['grafomotoria2.onrender.com'],
-    host: true,
-  },
+  base: '/', 
   server: {
     proxy: {
       '/api': {
@@ -32,8 +25,8 @@ export default defineConfig({
         theme_color: '#ffffff',
         background_color: '#ffffff',
         display: 'standalone',
-        scope: base,
-        start_url: base,
+        scope: '/', 
+        start_url: '/', 
         icons: [
           {
             src: 'pwa-192x192.png',
