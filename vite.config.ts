@@ -3,7 +3,10 @@ import react from '@vitejs/plugin-react';
 import { VitePWA } from 'vite-plugin-pwa';
 
 export default defineConfig({
-  base: '/', 
+  base: process.env.GITHUB_PAGES === 'true' ? '/GrafomotorIA2/' : '/',
+  preview: {
+    allowedHosts: ['grafomotoria2.onrender.com'],
+  },
   server: {
     proxy: {
       '/api': {
