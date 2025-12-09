@@ -1,0 +1,89 @@
+.doble-pizarra-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.doble-pizarra-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(to bottom, 
+    transparent 0%, 
+    #e30613 20%, 
+    #e30613 80%, 
+    transparent 100%);
+  z-index: 10;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.doble-pizarra-container::after {
+  content: 'Figura de referencia';
+  position: absolute;
+  top: 20px;
+  left: 25%;
+  transform: translateX(-50%);
+  background: rgba(227, 6, 19, 0.9);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: bold;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.doble-pizarra-container[data-posicion-figura="derecha"]::after {
+  left: 75%;
+  transform: translateX(-50%);
+}
+
+/* Etiqueta de área de dibujo usando un elemento adicional */
+.doble-pizarra-container .etiqueta-dibujo {
+  content: 'Área de dibujo';
+  position: absolute;
+  top: 20px;
+  left: 75%;
+  transform: translateX(-50%);
+  background: rgba(0, 150, 0, 0.9);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: bold;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.doble-pizarra-container[data-posicion-figura="derecha"] .etiqueta-dibujo {
+  left: 25%;
+  transform: translateX(-50%);
+}
+
+.doble-pizarra-container[data-posicion-figura="izquierda"] .etiqueta-dibujo {
+  left: 75%;
+  transform: translateX(-50%);
+}
+
+/* Responsive para tablets */
+@media (max-width: 768px) {
+  .doble-pizarra-container::after,
+  .doble-pizarra-container .etiqueta-dibujo {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+}
+
+/* Responsive para móviles */
+@media (max-width: 480px) {
+  .doble-pizarra-container::after,
+  .doble-pizarra-container .etiqueta-dibujo {
+    font-size: 10px;
+    padding: 4px 8px;
+  }
+}

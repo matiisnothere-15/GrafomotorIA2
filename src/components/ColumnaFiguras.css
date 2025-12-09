@@ -1,0 +1,38 @@
+.columna {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    border: 1px solid black;
+    padding: 20px;
+}
+
+.primera_figura, .seleccionada {
+    position: relative;
+    display: inline-block;
+}
+
+.primera_figura img, .seleccionada img {
+    display: block;
+}
+
+.primera_figura::after {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    right: -20px;
+    bottom: -20px;
+    border: 7px solid black;
+    pointer-events: none;
+}
+
+.seleccionada::after {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    right: -20px;
+    bottom: -20px;
+    border: 7px solid red;
+    pointer-events: none;
+}

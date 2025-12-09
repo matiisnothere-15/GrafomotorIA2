@@ -1,33 +1,41 @@
-.login-header {
-  height: 80px;
-  background-color: rgba(255, 255, 255, 0.95);
-  display: flex;
-  align-items: center;
-  padding: 0 1rem;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-  justify-content: space-between;
-}
-
-.login-logo {
+login-logo {
   height: 60px;
 }
 
 .login-header {
   width: 100%;
-  padding: 0.7rem 0.5rem;
+  padding: 0.7rem 1rem;
   background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ccc; /* Línea divisoria */
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
 }
 
 .logo {
   display: flex;
   align-items: center;
   gap: 10px;
+  white-space: nowrap; 
 }
-
 .login-logo {
   height: 65px;
   object-fit: contain;
 }
+.perfil-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
 
 .linea {
   border: none;
@@ -39,10 +47,11 @@
 .nombre-logo {
   font-weight: bold;
   font-size: 1.2rem;
+  white-space: nowrap;
+  overflow: visible;
 }
-
 .logo-separador {
-  width: 3px;
+  width: 1px;
   height: 40px;
   background-color: #000000;
   margin: 0 12px;
@@ -53,6 +62,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  user-select: none;
 }
 
 .user-label {
@@ -69,6 +79,11 @@
   color: #8b0000;
 }
 
+.user-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 .user-dropdown {
   position: absolute;
   top: 120%;
@@ -99,4 +114,122 @@
 .user-dropdown button:hover {
   background-color: #ffecec;
   color: #e50914;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .tu-clase {
+    flex-direction: row;
+    padding: 2rem;
+  }
+}
+
+/*========================= Estilos header pacientes ============================*/
+.boton {
+  background-color: #E30613;
+  color: #FFFFFF;
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 14px;
+  margin-left: 40px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.boton:hover {
+  color: #FFFFFF;
+}
+
+.user-dropdown-pacientes {
+  position: absolute;
+  top: 130%;
+  right: 0;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  z-index: 999;
+  user-select: none;
+}
+
+.user-dropdown-pacientes button:hover {
+  background-color: #ffecec;
+  color: #e50914;
+}
+
+/*=================== Estilos Modal ========================*/
+.modal {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-contenido-pacientes {
+  overflow: visible !important;
+  width: 100%;
+  max-width: 600px;
+  padding: 1.5rem 2rem;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  overflow-y: auto;
+  max-height: 90vh;
+  font-family: 'Segoe UI', sans-serif;
+}
+.modal, .modal * {
+  font-family: ui-sans-serif, system-ui, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji !important;
+}
+
+.modal-contenido-pacientes input,
+.modal-contenido-pacientes textarea {
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid #CCCCCC;
+  font-size: 14px;
+  width: 100%;
+}
+
+.modal-acciones {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 16px;
+}
+
+.modal-acciones button {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+  min-height: 44px;
+}
+
+.modal-acciones button:first-child {
+  background-color: #E30613;
+  color: #FFFFFF;
+}
+
+.button-disabled {
+  opacity: 0.5;
+  cursor: default !important;
+}
+
+.modal-acciones button:last-child {
+  background-color: #CCCCCC;
+  color: #000000;
+}
+
+/* Títulos */
+.modal-contenido-pacientes h3 {
+  font-size: 20px;
+  color: #E30613;
+  font-weight: 700;
+  margin-bottom: 24px;
+  grid-column: span 2;
 }

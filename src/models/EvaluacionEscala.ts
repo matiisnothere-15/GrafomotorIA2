@@ -1,8 +1,8 @@
 export interface EvaluacionEscala {
-  id_evaluacion: number;
   fecha: string;
   tipo_escala: string;
-  resultado: string;
-  puntaje: number;
+  resultado: JSON | null;
+  puntaje: number | undefined;
   id_paciente: number;
+  id_ejercicio: number;
 }

@@ -2,19 +2,6 @@
   text-align: center;
   margin-bottom: 1.5rem;
 }
-.login-wrapper::before {
-  height: 100vh;
-  content: "";
-  width: 100%;
-  background-size: cover;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background-color: rgba(255, 255, 255, 0.5); /* Blanco con opacidad */
-  z-index: 0;
-}
 
 .login-form input {
   width: 100%;
@@ -24,7 +11,57 @@
   border: 1px solid #ccc;
 }
 
-.login-form button {
+.password-input-container {
+  position: relative;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.password-input-container input {
+  width: 100%;
+  padding-right: 2.5rem;
+  margin-bottom: 0;
+}
+
+.password-toggle-btn {
+  position: absolute;
+  right: 0.75rem;
+  top: 38%;
+  transform: translateY(calc(-50% - 1px));
+  background: transparent !important;
+  border: none !important;
+  cursor: pointer;
+  color: #666 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transition: color 0.2s;
+  width: 20px !important;
+  height: 20px !important;
+  min-width: 20px !important;
+  min-height: 20px !important;
+  font-weight: normal !important;
+  border-radius: 0 !important;
+  line-height: 1 !important;
+}
+
+.password-toggle-btn:hover {
+  color: #e50914 !important;
+  background: transparent !important;
+}
+
+.password-toggle-btn:focus {
+  outline: none;
+  background: transparent !important;
+}
+
+.password-toggle-btn:active {
+  background: transparent !important;
+}
+
+.login-form button[type="submit"] {
   width: 100%;
   padding: 0.75rem;
   background-color: #e50914;
@@ -35,7 +72,7 @@
   cursor: pointer;
 }
 
-.login-form button:hover {
+.login-form button[type="submit"]:hover {
   background-color: #c40811;
 }
 .login-form {
@@ -78,4 +115,12 @@
 
 .forgot-password a:hover {
   text-decoration: underline;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .tu-clase {
+    /* Ajustes específicos para tablet */
+    flex-direction: row;
+    padding: 2rem;
+  }
 }

@@ -1,0 +1,318 @@
+/* Contenido de src/pages/Actividades/CopiaFigura.css */
+
+.copiafigura-wrapper {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #ffffff;
+  font-family: ui-sans-serif, system-ui, sans-serif, 'Roboto', 'Poppins';
+}
+
+/* Botón flotante */
+.guardar-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: #E30613;
+  color: white;
+  padding: 12px 18px;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  font-family: 'Roboto', sans-serif;
+  min-height: 44px;
+  min-width: 44px;
+  z-index: 10;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.home-btn {
+  position: absolute;
+  background-color: #E30613;
+  color: white;
+  padding: 12px 18px;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  font-family: 'Roboto', sans-serif;
+  min-height: 44px;
+  min-width: 44px;
+  z-index: 10;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.siguiente-btn {
+  position: absolute;
+  bottom: 40px;
+  left: 20px;
+  background-color: #007bff;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  font-family: 'Roboto', sans-serif;
+  z-index: 10;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.siguiente-btn:hover {
+  background-color: #0056b3;
+}
+
+.guardar-btn:hover {
+  background-color: #B8040F;
+}
+
+/* 👇 SECCIÓN MODIFICADA Y MEJORADA */
+.resultado-box {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 16px;
+  z-index: 10;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-width: 220px;
+  transition: background-color 0.3s ease;
+}
+
+/* Nuevos colores por clase */
+.resultado-box.verde {
+  background: linear-gradient(45deg, #28a745, #228B22);
+}
+.resultado-box.amarillo-verdoso {
+  background: linear-gradient(45deg, #9dbd50, #7a9c3d);
+}
+.resultado-box.amarillo {
+  background: linear-gradient(45deg, #ffd700, #ffb300);
+}
+
+/* Mensaje de ánimo */
+.resultado-mensaje {
+  font-size: 1rem;
+  margin-top: 5px;
+  font-weight: normal;
+}
+/* Fin de la sección modificada */
+
+
+/* Breakpoints para tablets */
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .guardar-btn {
+    padding: 10px 16px;
+    font-size: 15px;
+  }
+
+  .resultado-box {
+    font-size: 1rem;
+    padding: 10px 20px;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1439px) {
+  .guardar-btn {
+    top: 24px;
+    right: 24px;
+  }
+
+  .resultado-box {
+    bottom: 60px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .guardar-btn {
+    top: 32px;
+    right: 32px;
+  }
+
+  .resultado-box {
+    font-size: 1.3rem;
+    padding: 16px 32px;
+  }
+}
+.selector-nivel {
+  position: absolute;
+  top: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  z-index: 15;
+}
+
+.selector-nivel button {
+  background-color: #ffffff;
+  border: 2px solid #E30613;
+  border-radius: 10px;
+  padding: 6px 12px;
+  font-size: 14px;
+  color: #E30613;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.selector-nivel .actual {
+  padding: 6px 14px;
+  font-weight: bold;
+  background-color: #E30613;
+  color: white;
+  border-radius: 12px;
+  border: none !important;
+  outline: none;
+}
+
+.selector-nivel .actual:active,
+.selector-nivel .actual:focus {
+  border: 2px solid #E30613 !important;
+  outline: none;
+}
+.resumen-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+.resumen-contenido {
+  background: white;
+  padding: 40px 24px;
+  border-radius: 12px;
+  text-align: center;
+  max-width: 380px;
+  width: 90%;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.resumen-contenido h2 {
+  color: #e30613;
+  margin-bottom: 12px;
+}
+
+.resumen-contenido p {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.resumen-contenido .volver-btn {
+  background-color: #e30613;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  font-size: 15px;
+  border-radius: 8px;
+  margin-top: 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.resumen-contenido .volver-btn:hover {
+  background-color: #b30410;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+
+
+
+
+/* ... (tus estilos existentes) ... */
+
+/* Botón Siguiente (Arriba a la derecha) */
+.boton-flotante-siguiente {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  
+  /* Mismo estilo que los otros botones rojos */
+  padding: 12px 18px;
+  background-color: #E30613;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  transition: background-color 0.2s ease;
+}
+
+.boton-flotante-siguiente:hover {
+  background-color: #B8040F;
+}
+
+/* Botón Evaluación IA (Abajo a la derecha) */
+.boton-flotante-ia {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  
+  background: #dc2626; /* Rojo */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.boton-flotante-ia:hover {
+  background: #b91c1c; /* Rojo oscuro */
+  transform: scale(1.05);
+}
+
+/* Estilos percepción visual */
+.columnas {
+  user-select: none;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 50px;
+  padding: 10px;
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+@media (min-width: 1255px) {
+  .columnas {
+    justify-content: center;
+  }
+}

@@ -1,0 +1,53 @@
+import React, { useEffect } from 'react';
+import HeaderPaciente from '../../components/HeaderPacientes';
+import { useGlobalPaciente } from '../../context/PacienteContext';
+import { Link } from 'react-router-dom';
+import './SeleccionFigura.css';
+
+import circulo from '../../assets/figuras/circulo.png';
+import cuadrado from '../../assets/figuras/cuadrado.png';
+import triangulo from '../../assets/figuras/triangulo.png';
+import estrella from '../../assets/figuras/estrella.png';
+import flecha from '../../assets/figuras/flecha.png';
+import pacman from '../../assets/figuras/pacman.png';
+import infinito from '../../assets/figuras/infinito.png';
+import arbol from '../../assets/figuras/arbol.png';
+import nube from '../../assets/figuras/nube.png';
+
+const figuras = [
+  { nombre: 'Círculo', icono: circulo, nivel: 1, id: 'circulo' },
+  { nombre: 'Cuadrado', icono: cuadrado, nivel: 1, id: 'cuadrado' },
+  { nombre: 'Triángulo', icono: triangulo, nivel: 1, id: 'triangulo' },
+];
+
+const SeleccionFigura: React.FC = () => {
+  const { nombre } = useGlobalPaciente();
+
+  useEffect(() => {
+    document.title = 'Selecciona una Figura';
+  }, []);
+
+  return (
+    <div className="seleccionfigura-wrapper">
+      <HeaderPaciente nombre_paciente={nombre!} />
+      <main>
+        <div className="seleccionfigura-grid">
+          {figuras.map((figura) => {
+            const ruta = `/copiar-figura/nivel1/${figura.id}`;
+
+            return (
+              <Link to={ruta} key={figura.nombre} className="activity-card-link">
+                <div className="seleccionfigura-card" tabIndex={0}>
+                  <h3>{figura.nombre}</h3>
+                  <img src={figura.icono} alt={figura.nombre} />
+                </div>
+              </Link>
+            );
+          })}
+        </div>
+      </main>
+    </div>
+  );
+};
+
+export default SeleccionFigura;

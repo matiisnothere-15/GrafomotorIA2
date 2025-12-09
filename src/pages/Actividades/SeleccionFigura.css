@@ -1,0 +1,125 @@
+.seleccionfigura-wrapper {
+  padding-top: 80px;
+  min-height: 100vh;
+  overflow-y: auto;
+  font-family: 'Roboto', 'Poppins', ui-sans-serif, system-ui, sans-serif;
+  padding: 1rem 1rem 2rem 1rem;
+  margin-top: 64px;
+}
+
+/* 🟥 Grid principal */
+.seleccionfigura-grid {
+  display: grid;
+  gap: 1.5rem;
+  padding: 2rem 0;
+  margin: 0 auto;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  max-width: 100%;
+}
+
+/* 🟨 Tarjeta individual */
+.seleccionfigura-card {
+  background-color: #f8f8f8;
+  border-radius: 16px;
+  padding: 1.5rem;
+  text-align: center;
+  transition: transform 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1.2rem;
+  height: 100%;
+}
+
+.seleccionfigura-card:hover {
+  transform: scale(1.03);
+}
+
+.seleccionfigura-card h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #333333;
+  text-align: center;
+}
+
+.seleccionfigura-card img {
+  max-width: 100px;
+  height: auto;
+  margin: 0 auto 1rem auto;
+}
+
+.seleccionfigura-card .nivel-tag {
+  font-size: 0.9rem;
+  font-weight: bold;
+  padding: 6px 12px;
+  border-radius: 8px;
+  display: inline-block;
+  background-color: #E30613;
+  color: white;
+  margin-top: auto;
+}
+
+/* 📱 Móviles */
+@media screen and (max-width: 767px) {
+  .seleccionfigura-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .seleccionfigura-card img {
+    max-width: 90px;
+  }
+}
+
+/* 📱 Tablets medianas */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .seleccionfigura-grid {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 90%;
+  }
+
+  .seleccionfigura-card {
+    padding: 1.8rem;
+  }
+
+  .seleccionfigura-card h3 {
+    font-size: 1.4rem;
+  }
+
+  .seleccionfigura-card img {
+    max-width: 130px;
+  }
+
+  .seleccionfigura-card .nivel-tag {
+    font-size: 1rem;
+    padding: 8px 14px;
+  }
+}
+
+/* 💻 Tablets grandes e iPad Pro (~1024 CSS px reales) */
+@media screen and (min-width: 1000px) {
+  .seleccionfigura-grid {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 1200px;
+  }
+
+  .seleccionfigura-card {
+    padding: 2rem;
+  }
+
+  .seleccionfigura-card h3 {
+    font-size: 1.6rem;
+  }
+
+  .seleccionfigura-card img {
+    max-width: 160px;
+  }
+
+  .seleccionfigura-card .nivel-tag {
+    font-size: 1.15rem;
+    padding: 10px 18px;
+  }
+}

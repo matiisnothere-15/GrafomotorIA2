@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect } from 'react'; 
 import { useLocation, useNavigate, Link } from 'react-router-dom';
 import logo from '../assets/teleton-logo.png';
 import { FaUserCircle, FaUser, FaCog } from 'react-icons/fa';
@@ -10,28 +10,45 @@ const Header: React.FC = () => {
   const navigate = useNavigate();
   const dropdownRef = useRef<HTMLDivElement>(null);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [foto, setFoto] = useState<string | null>(null);
 
   const ocultarMenuUsuario = ['/', '/recuperar-contrasena', '/restablecer-contrasena'];
   const mostrarUsuario = !ocultarMenuUsuario.includes(location.pathname);
 
   useEffect(() => {
+    const cargarFoto = () => {
+    const almacenada = localStorage.getItem('fotoPerfil') || sessionStorage.getItem('imagen');
+      setFoto(almacenada);
+    };
+
     const handleClickOutside = (e: MouseEvent) => {
       if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
         setMenuOpen(false);
       }
     };
+
+    cargarFoto();
+    window.addEventListener('fotoCambio', cargarFoto);
     document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
+
+    return () => {
+      window.removeEventListener('fotoCambio', cargarFoto);
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
   }, []);
 
   const handleLogout = () => {
     sessionStorage.clear();
+    localStorage.removeItem("fotoPerfil");
     navigate('/');
   };
 
-
   const handleLogoClick = () => {
-    if (mostrarUsuario) {
+    // Si está en biblioteca de ejercicios o rutas de actividades, redirigir al home
+    const rutasActividades = ['/actividades', '/figuras', '/trazados', '/copiar-figura', '/trazado-guiado', '/coordinacion-motriz', '/percepcion-visual', '/actividad'];
+    const esRutaActividad = rutasActividades.some(ruta => location.pathname.startsWith(ruta));
+    
+    if (esRutaActividad || mostrarUsuario) {
       navigate('/home');
     }
   };
@@ -48,15 +65,21 @@ const Header: React.FC = () => {
         <div className="user-container" ref={dropdownRef}>
           <div className="user-label" onClick={() => setMenuOpen(!menuOpen)}>
             <span>Hola, {sessionStorage.getItem("nombre") || "Usuario"}</span>
-            <FaUserCircle className="user-icon" />
+            <div className="perfil-link">
+              {foto ? (
+                <img src={foto} alt="Foto de perfil" className="user-img" />
+              ) : (
+                <FaUserCircle className="user-icon" />
+              )}
+            </div>
           </div>
           {menuOpen && (
             <div className="user-dropdown">
               <Link to="/perfil"><FaUser /> Perfil</Link>
-              <Link to="/ajustes"><FaCog /> Ajustes</Link>
-              <button onClick={handleLogout} className="logout">
+              <Link to="/configuracion"><FaCog /> Configuración</Link>
+              <Link to="" onClick={handleLogout} className="logout">
                 <RiLogoutBoxLine /> Salir
-              </button>
+              </Link>
             </div>
           )}
         </div>

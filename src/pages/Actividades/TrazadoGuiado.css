@@ -1,0 +1,168 @@
+.trazado-fullscreen {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-color: #fff;
+  overflow: hidden;
+  font-family: 'Poppins', 'Roboto', sans-serif;
+}
+
+.trazado-contenido {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.titulo-ejercicio {
+  position: absolute;
+  top: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.8rem;
+  font-weight: bold;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 0.6rem 1.4rem;
+  border-radius: 12px;
+  z-index: 10;
+  text-align: center;
+}
+
+.canvas-container {
+  width: 100%;
+  height: 100%;
+}
+
+.botones {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 1rem;
+  z-index: 10;
+}
+
+.btn-rojo {
+  background-color: #E30613;
+  color: white;
+  border: none;
+  padding: 0.9rem 1.6rem;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  min-width: 120px;
+}
+
+.btn-rojo:hover {
+  background-color: #B8040F;
+}
+
+.resultado {
+  font-weight: bold;
+  font-size: 1.2rem;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  color: white;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.resultado.verde {
+  background-color: #4caf50;
+}
+
+.resultado.amarillo {
+  background-color: #ffc107;
+}
+
+.resultado.rojo {
+  background-color: #E30613;
+}
+
+/* Resultado final */
+.resultado-final {
+  margin-top: 1rem;
+  background: #fff;
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.popup-final {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.popup-contenido {
+  background: white;
+  padding: 2rem 2.5rem;
+  border-radius: 15px;
+  text-align: center;
+  max-width: 480px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  font-family: 'Roboto', sans-serif;
+}
+
+.popup-contenido h2 {
+  margin-bottom: 1rem;
+  color: #E30613;
+}
+
+.popup-contenido p {
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.mensaje-error {
+  margin-top: 1rem;
+  color: #E30613;
+  font-weight: bold;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.ctn-stars {
+  background-color: #f1f1f1;
+  padding: 6px;
+  border-radius: 6px;
+  margin-top: 0.5rem;
+  display: inline-block;
+}
+
+/* Responsive tablet 768–1439px */
+@media (min-width: 768px) and (max-width: 1439px) {
+  .titulo-ejercicio {
+    font-size: 1.6rem;
+    padding: 0.5rem 1.2rem;
+  }
+
+  .btn-rojo {
+    font-size: 0.95rem;
+    padding: 0.8rem 1.4rem;
+  }
+
+  .popup-contenido {
+    padding: 1.8rem 2rem;
+  }
+
+  .resultado {
+    font-size: 1.1rem;
+  }
+}

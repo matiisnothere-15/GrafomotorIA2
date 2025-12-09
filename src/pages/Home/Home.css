@@ -1,0 +1,600 @@
+/* Logo con nombre */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nombre-logo {
+  margin: 0;
+  font-weight: bolder;
+  font-size: 20px;
+  font-family: 'Poppins', sans-serif;
+  color: #E30613;
+}
+
+.linea {
+  color: #555555;
+  height: 40px;
+}
+
+.logout {
+  background: none;
+  border: none;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  min-width: 44px;
+  min-height: 44px;
+}
+.logout:hover {
+  background-color: #FFFFFF;
+  text-decoration: underline;
+}
+
+/* 🟥 Categorías y Secciones */
+.categoria-seccion {
+  margin-bottom: 0.5rem;
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.categoria-header {
+  text-align: center;
+  margin-bottom: 0.5rem;
+  padding: 0 1rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.categoria-titulo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  font-size: 2rem;
+  font-weight: 700;
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  text-align: center;
+}
+
+.categoria-icono {
+  font-size: 2.2rem;
+}
+
+.admin-titulo {
+  color: rgb(233, 194, 67); /* Amarillo para administrador */
+}
+
+.terapeuta-titulo {
+  color: rgb(211, 55, 65); /* Rojo para terapeuta */
+}
+
+/* 🟥 Tarjetas del Home */
+.home-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.admin-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.terapeuta-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.home-card {
+  min-width: 280px;
+  max-width: 300px;
+  flex: 1;
+  height: 110px;
+  background-color: #FFFFFF;
+  border-radius: 16px;
+  padding: 1rem 1.25rem;
+  text-decoration: none;
+  color: #1a1a1a;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1rem;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.admin-card {
+  border-left: 4px solid rgb(233, 194, 67);
+}
+
+.terapeuta-card {
+  border-left: 4px solid rgb(211, 55, 65);
+}
+
+.home-card:hover {
+  transform: translateY(-2px);
+  color: #1a1a1a;
+}
+
+.admin-card:hover {
+  background-color: rgba(233, 194, 67, 0.1);
+  box-shadow: 0 8px 20px rgba(233, 194, 67, 0.2);
+}
+
+.terapeuta-card:hover {
+  background-color: rgba(211, 55, 65, 0.1);
+  box-shadow: 0 8px 20px rgba(211, 55, 65, 0.2);
+}
+
+/* 🟩 Contenedor general del grid */
+.home-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 1rem 1rem;
+  gap: 0.8rem;
+  width: 100%;
+  max-width: 100%;
+}
+
+.home-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+  background: url(../../assets/login-bg.jpg) no-repeat center center fixed;
+  background-size: cover;
+  align-items: center;
+}
+
+/* 🟨 Íconos circulares dentro de las tarjetas */
+.card-circle {
+  background-color: #FBEAEA;
+  border-radius: 50%;
+  width: 55px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #E30613;
+  font-size: 1.6rem;
+  flex-shrink: 0;
+}
+
+.admin-circle {
+  background-color: rgba(233, 194, 67, 0.2);
+  color: rgb(233, 194, 67);
+}
+
+.terapeuta-circle {
+  background-color: rgba(211, 55, 65, 0.2);
+  color: rgb(211, 55, 65);
+}
+
+.card-texto {
+  font-size: 1.2rem;
+  font-weight: 600;
+  font-family: 'Roboto', sans-serif;
+  white-space: nowrap;
+}
+
+/* 👤 Menú desplegable de usuario */
+.user-container {
+  position: relative;
+  margin-left: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.25rem;
+}
+
+.user-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  font-size: 0.95rem;
+  color: #333;
+  font-family: 'Roboto', sans-serif;
+}
+
+.user-icon {
+  background-color: #FBEAEA;
+  border-radius: 50%;
+  padding: 0.4rem;
+  font-size: 3rem;
+  color: #E30613;
+}
+
+.user-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 0.5rem;
+  background: #FFFFFF;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  z-index: 999;
+}
+
+.user-dropdown a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  color: #333;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-family: 'Roboto', sans-serif;
+}
+
+.user-dropdown a:hover {
+  background-color: #FBEAEA;
+  color: #E30613;
+}
+
+/* ===================== RESPONSIVE ===================== */
+
+/* Pantallas grandes (iPad Pro y superiores) */
+@media (min-width: 1360px) {
+  
+  .categoria-titulo {
+    font-size: 2rem;
+  }
+  
+  .categoria-seccion {
+    margin-bottom: 0.3rem;
+  }
+  
+  .categoria-header {
+    margin-bottom: 0.2rem;
+  }
+  
+  .home-grid {
+    gap: 2rem;
+    padding: 2rem 3rem;
+    max-width: 1350px;
+    justify-content: center;
+  }
+  
+  .admin-grid {
+    gap: 2rem;
+    justify-content: center;
+  }
+  
+  .terapeuta-grid {
+    gap: 2rem;
+    justify-content: center;
+  }
+  
+  .home-card {
+    min-width: 350px;
+    max-width: 380px;
+    height: 140px;
+    border-radius: 20px;
+    transform: none;
+    gap: 1.5rem;
+  }
+  
+  .card-circle {
+    width: 80px;
+    height: 80px;
+    font-size: 2.2rem;
+  }
+
+  .nombre-logo {
+    font-size: 26px;
+  }
+  .user-label {
+    font-size: 1.2rem;
+  }
+  .user-icon {
+    font-size: 3.8rem;
+    padding: 0.6rem;
+  }
+  .user-dropdown a {
+    font-size: 1.15rem;
+    padding: 1rem 1.5rem;
+  }
+}
+
+/* iPad Air y tablets similares (>= 1100px y < 1360px) */
+@media (min-width: 1100px) and (max-width: 1359px) {
+  .categoria-titulo {
+    font-size: 2rem;
+  }
+  
+  .categoria-seccion {
+    margin-bottom: 0.3rem;
+  }
+  
+  .categoria-header {
+    margin-bottom: 0.2rem;
+  }
+  
+  .home-grid {
+    gap: 2rem;
+    padding: 2rem 3rem;
+    max-width: 1350px;
+    justify-content: center;
+  }
+  
+  .admin-grid {
+    gap: 2rem;
+    justify-content: center;
+  }
+  
+  .terapeuta-grid {
+    gap: 2rem;
+    justify-content: center;
+  }
+  
+  .home-card {
+    min-width: 350px;
+    max-width: 380px;
+    height: 140px;
+    border-radius: 20px;
+    transform: none;
+    gap: 1.5rem;
+  }
+  
+  .card-circle {
+    width: 80px;
+    height: 80px;
+    font-size: 2.2rem;
+  }
+
+  .nombre-logo {
+    font-size: 26px;
+  }
+  .user-label {
+    font-size: 1.2rem;
+  }
+  .user-icon {
+    font-size: 3.8rem;
+    padding: 0.6rem;
+  }
+  .user-dropdown a {
+    font-size: 1.15rem;
+    padding: 1rem 1.5rem;
+  }
+}
+
+/* Tablets medianas y chicas (>= 900px y < 1100px) */
+@media (max-width: 1099px) and (min-width: 900px) {
+  .categoria-titulo {
+    font-size: 2rem;
+  }
+  
+  .categoria-seccion {
+    margin-bottom: 0.3rem;
+  }
+  
+  .categoria-header {
+    margin-bottom: 0.2rem;
+  }
+  
+  .home-grid {
+    gap: 2rem;
+    padding: 2rem 3rem;
+    max-width: 1350px;
+    justify-content: center;
+  }
+  
+  .admin-grid {
+    gap: 2rem;
+    justify-content: center;
+  }
+  
+  .terapeuta-grid {
+    gap: 2rem;
+    justify-content: center;
+  }
+  
+  .home-card {
+    min-width: 350px;
+    max-width: 380px;
+    height: 140px;
+    border-radius: 20px;
+    transform: none;
+    gap: 1.5rem;
+  }
+  
+  .card-circle {
+    width: 80px;
+    height: 80px;
+    font-size: 2.2rem;
+  }
+
+  .nombre-logo {
+    font-size: 26px;
+  }
+  .user-label {
+    font-size: 1.2rem;
+  }
+  .user-icon {
+    font-size: 3.8rem;
+    padding: 0.6rem;
+  }
+  .user-dropdown a {
+    font-size: 1.15rem;
+    padding: 1rem 1.5rem;
+  }
+}
+
+/* Tablets pequeñas  (>=600px y <900px) */
+@media (max-width: 899px) and (min-width: 600px) {
+  .categoria-titulo {
+    font-size: 2rem;
+  }
+  
+  .categoria-seccion {
+    margin-bottom: 0.3rem;
+  }
+  
+  .categoria-header {
+    margin-bottom: 0.2rem;
+  }
+  
+  .home-grid {
+    gap: 2rem;
+    padding: 2rem 3rem;
+    max-width: 1350px;
+    justify-content: center;
+  }
+  
+  .admin-grid {
+    gap: 2rem;
+    justify-content: center;
+  }
+  
+  .terapeuta-grid {
+    gap: 2rem;
+    justify-content: center;
+  }
+  
+  .home-card {
+    min-width: 350px;
+    max-width: 380px;
+    height: 140px;
+    border-radius: 20px;
+    transform: none;
+    gap: 1.5rem;
+  }
+  
+  .card-circle {
+    width: 80px;
+    height: 80px;
+    font-size: 2.2rem;
+  }
+
+  .nombre-logo {
+    font-size: 26px;
+  }
+  .user-label {
+    font-size: 1.2rem;
+  }
+  .user-icon {
+    font-size: 3.8rem;
+    padding: 0.6rem;
+  }
+  .user-dropdown a {
+    font-size: 1.15rem;
+    padding: 1rem 1.5rem;
+  }
+}
+
+/*=================== Estilos Modal ========================*/
+.modal {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-contenido-pacientes {
+  overflow: visible !important;
+  width: 100%;
+  max-width: 600px;
+  padding: 1.5rem 2rem;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  overflow-y: auto;
+  max-height: 90vh;
+  font-family: 'Segoe UI', sans-serif;
+}
+.modal, .modal * {
+  font-family: ui-sans-serif, system-ui, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji !important;
+}
+
+.modal-contenido-pacientes input,
+.modal-contenido-pacientes textarea {
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid #CCCCCC;
+  font-size: 14px;
+  width: 100%;
+}
+
+.modal-acciones {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 16px;
+}
+
+.modal-acciones button {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+  min-height: 44px;
+}
+
+.modal-acciones button:first-child {
+  background-color: #E30613;
+  color: #FFFFFF;
+}
+
+.button-disabled {
+  opacity: 0.5;
+  cursor: default !important;
+}
+
+.modal-acciones button:last-child {
+  background-color: #CCCCCC;
+  color: #000000;
+}
+
+/* Títulos */
+.modal-contenido-pacientes h3 {
+  font-size: 20px;
+  color: #E30613;
+  font-weight: 700;
+  margin-bottom: 24px;
+  grid-column: span 2;
+}
+
+.select-paciente {
+  position: absolute;
+  min-width: 280px;
+  font-size: 0.9rem;
+  z-index: 9999;
+}
+
+.no-border {
+  outline: none !important;
+}
