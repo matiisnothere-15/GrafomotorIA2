@@ -9,7 +9,7 @@
     "preview": "vite preview --host --port 4173",
     "start": "serve -s dist",
     "predeploy": "npm run build",
-    "deploy": "cross-env GITHUB_PAGES=true npm run build && gh-pages -d dist"
+    "deploy": "cross-env GITHUB_PAGES=true npm run build && node copy-404.js && gh-pages -d dist"
   },
   "dependencies": {
     "@fullcalendar/core": "^6.1.17",
